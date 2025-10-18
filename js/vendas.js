@@ -1,11 +1,8 @@
 // ===========================
-// vendas.js — PDV (corrigido)
-// - Não depende de DOMContentLoaded (pronto para injeção dinâmica)
-// - Modais abrem por clique
-// - Sem atalhos de teclado (apenas clique)
+// vendas.js — PDV 
 // ===========================
 
-/* catálogo de exemplo (adicione img: "caminho" se quiser exibir imagem lateral) */
+/* catálogo de exemplo */
 const produtosCatalogo = [
   { codigo: "0001", nome: "PÃO FRANCÊS", preco: 8.90, img: "../assets/pao.png" },
   { codigo: "0002", nome: "HOT POCKET SADIA X BURGUER", preco: 5.60, img: "../assets/hotpocket.png" },
@@ -87,7 +84,7 @@ function atualizarResumo(produto) {
   }
 }
 
-/* ---------- entrada por código (campo visível) ---------- */
+/* ---------- consulta por código ---------- */
 function handleInputCodigo(inputCodigo) {
   if (!inputCodigo) return;
 
@@ -121,7 +118,7 @@ function handleInputCodigo(inputCodigo) {
   });
 }
 
-/* ---------- Modal de consulta (abre por clique no botão) ---------- */
+/* ---------- Modal de consulta ---------- */
 function setupModalConsulta() {
   const btnConsultarProdutos = document.getElementById("btnConsultarProdutos");
   const modalConsulta = document.getElementById("modalConsulta");
@@ -272,7 +269,7 @@ function setupModalPagamento() {
   });
 }
 
-/* ---------- popup visual ---------- */
+/* ---------- popup feedback ---------- */
 function ensurePopupStyle() {
   if (document.getElementById("venda-popup-style")) return;
   const style = document.createElement("style");
@@ -313,7 +310,7 @@ function showPopup(text) {
   }, 1800);
 }
 
-/* ---------- outros botões (apenas clique) ---------- */
+/* ---------- outros botões ---------- */
 function setupOtherButtons() {
   document.getElementById("btnFecharCaixa")?.addEventListener("click", () => alert("Fechando caixa..."));
   document.getElementById("btnAbrirCaixa")?.addEventListener("click", () => alert("Abrindo caixa..."));
@@ -332,7 +329,7 @@ function setupOtherButtons() {
   document.getElementById("btnDevolucao")?.addEventListener("click", () => alert("Devolução em desenvolvimento."));
 }
 
-/* ---------- inicialização imediata (para execução após injeção) ---------- */
+/* ---------- inicialização imediata ---------- */
 (function initPDVPage() {
   // valida elementos mínimos
   const required = [
@@ -342,9 +339,6 @@ function setupOtherButtons() {
   ];
   const missing = required.filter(id => !document.getElementById(id));
   if (missing.length) {
-    // se a página foi injetada mas os elementos ainda não existem, avisamos e abortamos silenciosamente
-    // (isso evita erros ao executar em contextos distintos). Se você ver esse log, significa que o script
-    // foi executado em contexto errado.
     console.warn("initPDVPage: elementos faltando (vendas.js abortado):", missing);
     return;
   }

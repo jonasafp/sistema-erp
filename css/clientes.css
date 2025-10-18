@@ -20,7 +20,7 @@
   margin-bottom: 25px;
 }
 
-/* 🔹 Filtro e busca */
+/* Filtro e busca */
 .filtro-busca {
   display: flex;
   align-items: center;
@@ -45,7 +45,7 @@
   box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.2);
 }
 
-/* 🔹 Botão de adicionar cliente (ícone +) */
+/* Botão de adicionar cliente (ícone +) */
 .btn-add-cliente {
   background: none;
   border: none;
@@ -157,7 +157,7 @@ tr:hover {
    MODAL DE CADASTRO DE CLIENTE
 =================================== */
 .modal {
-  display: none; /* Oculto por padrão */
+  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -219,7 +219,7 @@ tr:hover {
   background: var(--primary-hover);
 }
 
-/* 🔹 Botão de fechar modal */
+/* Botão de fechar modal */
 .close-modal {
   position: absolute;
   right: 15px;

@@ -1,4 +1,6 @@
-// js/estoque.js  (rodará assim que for injetado pelo main.js)
+// ============================================
+// estoque.js
+// ============================================
 
 // Simulação de dados
 const produtos = [
@@ -34,15 +36,13 @@ function formatarStatus(status) {
   }
 }
 
-// --- inicialização (este arquivo é injetado pelo main.js após o HTML da página) ---
+// --- inicialização ---
 (function initEstoquePage() {
-  // se o elemento não existe, aborta (por segurança)
   const btnAddProduto = document.getElementById("btnAddProduto");
   const modalProduto = document.getElementById("modalProduto");
   const closeModal = document.getElementById("closeModal");
   const formProduto = document.getElementById("formProduto");
 
-  // carrega tabela
   carregarEstoque();
 
   if (!btnAddProduto || !modalProduto || !closeModal || !formProduto) {
@@ -50,10 +50,9 @@ function formatarStatus(status) {
     return;
   }
 
-  // abrir modal (adiciona classe show para efeitos)
+  // abrir modal
   btnAddProduto.addEventListener("click", () => {
     modalProduto.style.display = "flex";
-    // pequeno delay para garantir que a exibição já ocorreu antes de adicionar classe (para transição)
     setTimeout(() => modalProduto.classList.add("show"), 10);
   });
 
@@ -70,7 +69,7 @@ function formatarStatus(status) {
     if (e.target === modalProduto) fecharModal();
   });
 
-  // submit do formulário adiciona produto visualmente (opcional)
+  // submit
   formProduto.addEventListener("submit", (e) => {
     e.preventDefault();
     const novo = {
@@ -80,7 +79,7 @@ function formatarStatus(status) {
       quantidade: formProduto.quantidade.value,
       status: formProduto.status.value === "ativo" ? "ok" : (formProduto.status.value === "baixo" ? "low" : "out")
     };
-    produtos.unshift(novo); // adiciona no início
+    produtos.unshift(novo); 
     carregarEstoque();
     fecharModal();
     formProduto.reset();

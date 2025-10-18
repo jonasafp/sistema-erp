@@ -1,5 +1,5 @@
 // ============================
-// CLIENTES — Controle completo + Feedback
+// clientes.js
 // ============================
 
 let clientes = [
@@ -34,10 +34,10 @@ function renderClientes(lista) {
       <td>${c.email}</td>
       <td>${c.cidade}</td>
       <td class="acoes">
-        <button class="acao-btn" data-tooltip="Editar cliente" title="Editar" data-index="${i}">
+        <button class="acao-btn editar" data-tooltip="Editar cliente" title="Editar" data-index="${i}">
           <i class="fas fa-pen"></i>
         </button>
-        <button class="acao-btn" data-tooltip="Excluir cliente" title="Excluir" data-index="${i}">
+        <button class="acao-btn excluir" data-tooltip="Excluir cliente" title="Excluir" data-index="${i}">
           <i class="fas fa-trash"></i>
         </button>
       </td>
@@ -68,7 +68,7 @@ buscaCliente.addEventListener("input", () => {
 });
 
 /* =======================================
-   3. MODAL (abrir/fechar)
+   3. MODAL 
 ======================================= */
 btnAddCliente.addEventListener("click", () => {
   editandoCliente = null;
@@ -141,7 +141,7 @@ function excluirCliente(index) {
 }
 
 /* =======================================
-   7. POPUP VISUAL (feedback)
+   7. POPUP (feedback)
 ======================================= */
 function ensurePopupStyle() {
   if (document.getElementById("cliente-popup-style")) return;

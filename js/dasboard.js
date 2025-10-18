@@ -1,5 +1,5 @@
 // ================================
-// DASHBOARD.JS — Gráficos e dados
+// dashboard.js — Gráficos e dados
 // ================================
 
 // Aguarda o carregamento completo do DOM

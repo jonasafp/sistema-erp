@@ -1,5 +1,5 @@
 // ============================================
-// main.js — Navegação dinâmica e execução de scripts
+// main.js
 // ============================================
 
 // Mapeia cada página ao seu respectivo script
@@ -15,7 +15,7 @@ function removePageScripts() {
   document.querySelectorAll('script[data-page-script]').forEach(s => s.remove());
 }
 
-// Injeta e executa o script da página (garantido 100%)
+// Injeta e executa o script da página
 async function injectPageScript(url) {
   removePageScripts();
 
@@ -30,7 +30,7 @@ async function injectPageScript(url) {
     const res = await fetch(`${scriptPath}?v=${Date.now()}`, { cache: "no-store" });
     const code = await res.text();
 
-    // Cria um <script> visível no DOM (para debugging) com marcação da página
+    // Cria um <script> visível no DOM com marcação da página
     const scriptTag = document.createElement("script");
     scriptTag.type = "text/javascript";
     scriptTag.setAttribute("data-page-script", filename);
@@ -101,6 +101,5 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 🔹 Carrega a página inicial (Dashboard)
   carregarPagina("pages/dashboard.html");
 });
