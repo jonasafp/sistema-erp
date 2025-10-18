@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema ERP</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+  <!-- ====== Header ====== -->
+  <header class="header">
+    <div class="logo">
+      <img src="assets/logo.jpg" alt="Logo ERP">
+      <span>Sistema ERP</span>
+    </div>
+
+    <div class="search-box">
+      <input type="text" placeholder="Buscar...">
+      <button>🔍</button>
+    </div>
+
+    <button id="menu-btn" class="menu-btn">☰ MENU</button>
+  </header>
+
+  <!-- ====== Sidebar (menu lateral) ====== -->
+  <aside class="sidebar" id="sidebar">
+    <nav>
+      <ul>
+        <li class="active"><a href="pages/dashboard.html">Dashboard</a></li>
+        <li><a href="pages/estoque.html" data-page="estoque">Estoque</a></li>
+        <li><a href="pages/vendas.html">Vendas</a></li>
+        <li><a href="pages/clientes.html">Clientes</a></li>
+        <li><a href="pages/configuracoes.html">Configurações</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- ====== Conteúdo principal ====== -->
+  <main id="page-content" class="main-content">
+    <!-- O conteúdo das páginas será carregado aqui via main.js -->
+  </main>
+
+  <!-- ====== Scripts ====== -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

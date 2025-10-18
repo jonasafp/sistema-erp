@@ -1,0 +1,396 @@
+@import url('variaveis.css');
+
+/* === Estrutura geral === */
+.vendas-page {
+  background: var(--background-color);
+  padding: 15px;
+  border-radius: var(--radius-default);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+.pdv-header {
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: var(--radius-default);
+  margin-bottom: 10px;
+}
+
+.pdv-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* === Estrutura principal === */
+.pdv-main {
+  display: grid;
+  grid-template-columns: 2.2fr 0.8fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* === Tabela de itens === */
+.pdv-tabela {
+  background: var(--card-bg);
+  border-radius: var(--radius-default);
+  box-shadow: var(--shadow-default);
+  overflow: hidden;
+}
+
+.pdv-tabela table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.pdv-tabela th {
+  background: #e9eef3;
+  text-align: left;
+  padding: 8px 10px;
+  font-weight: 600;
+  color: var(--accent-color);
+  border-bottom: 2px solid #d1d1d1;
+}
+
+.pdv-tabela td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.pdv-tabela tr:hover {
+  background: #f4f8fc;
+}
+
+/* === Lateral === */
+.pdv-lateral {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--card-bg);
+  border-radius: var(--radius-default);
+  padding: 15px;
+  box-shadow: var(--shadow-default);
+}
+
+.pdv-lateral img {
+  width: 160px;
+  height: 160px;
+  border-radius: var(--radius-default);
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.pdv-lateral img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: var(--radius-default);
+  box-shadow: var(--shadow-default);
+  margin-bottom: 15px;
+  display: none; /* inicialmente oculto */
+}
+
+.pdv-info {
+  width: 100%;
+  text-align: center;
+}
+
+.pdv-info div {
+  background: #f8fafc;
+  border-radius: var(--radius-default);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.pdv-info span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+}
+
+.pdv-info p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.total-box {
+  background: var(--primary-color);
+  color: var(--primary-color);
+  padding: 12px;
+  border-radius: var(--radius-default);
+}
+
+.total-box h2 {
+  margin: 0;
+}
+
+/* === Rodapé === */
+.pdv-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pdv-btn {
+  flex: 1;
+  background: #e7ebef;
+  color: var(--text-color);
+  border: none;
+  padding: 10px;
+  border-radius: var(--radius-default);
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.3s ease;
+  min-width: 130px;
+}
+
+.pdv-btn small {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 400;
+}
+
+.pdv-btn:hover {
+  background: #dfe7ee;
+}
+
+.pdv-btn.destaque {
+  background: var(--primary-color);
+  color: white;
+}
+
+.pdv-btn.destaque:hover {
+  background: var(--primary-hover);
+}
+
+/* Campo de código visível */
+.codigo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px auto 20px;
+  gap: 10px;
+}
+
+.codigo-box label {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.codigo-input {
+  width: 260px;
+  padding: 10px 14px;
+  border-radius: var(--radius-default);
+  border: 1px solid var(--border-color);
+  background: #fff;
+  font-size: 1rem;
+  box-shadow: var(--shadow-default);
+  transition: all 0.2s ease;
+}
+
+.codigo-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 6px rgba(0, 174, 255, 0.3);
+  outline: none;
+}
+
+/* Efeito ao adicionar item */
+.pdv-tabela tr.novo-item {
+  animation: destaqueItem 0.5s ease;
+}
+
+@keyframes destaqueItem {
+  0% { background: #b3e5fc; }
+  100% { background: transparent; }
+}
+
+/* ========================
+   Modal de Consulta (F6)
+======================== */
+.modal-consulta {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-consulta-content {
+  background: var(--card-bg);
+  width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: var(--radius-default);
+  box-shadow: var(--shadow-default);
+  padding: 20px;
+  animation: zoomIn 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal-header h2 {
+  color: var(--text-color);
+  font-size: 1.4rem;
+}
+
+.close-modal {
+  cursor: pointer;
+  font-size: 22px;
+  color: var(--secondary-color);
+}
+
+.close-modal:hover {
+  color: var(--primary-color);
+}
+
+.modal-body input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-size: 15px;
+}
+
+.tabela-consulta {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-consulta th, .tabela-consulta td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tabela-consulta tr:hover {
+  background-color: #e3f2fd;
+  cursor: pointer;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ========================
+   Modal de Pagamento
+======================== */
+.modal-pagamento {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.45);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-pagamento-content {
+  background: var(--card-bg);
+  width: 420px;
+  padding: 25px 30px;
+  border-radius: var(--radius-default);
+  box-shadow: var(--shadow-default);
+  animation: zoomIn 0.25s ease;
+}
+
+.modal-pagamento .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal-pagamento .modal-header h2 {
+  color: var(--text-color);
+}
+
+.modal-pagamento .close-modal {
+  font-size: 24px;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.modal-pagamento .close-modal:hover {
+  color: var(--primary-color);
+}
+
+.modal-pagamento .modal-body .campo {
+  margin-bottom: 12px;
+}
+
+.modal-pagamento label {
+  display: block;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 4px;
+}
+
+.modal-pagamento input,
+.modal-pagamento select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: #fff;
+  font-size: 15px;
+}
+
+.modal-pagamento p {
+  margin: 8px 0;
+  color: var(--text-color);
+}
+
+.modal-pagamento .valor-final {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.btn-confirmar {
+  width: 100%;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: var(--radius-default);
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-top: 15px;
+}
+
+.btn-confirmar:hover {
+  background: var(--primary-hover);
+}

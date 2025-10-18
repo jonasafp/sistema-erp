@@ -1,0 +1,27 @@
+:root {
+  /* === CORES PRINCIPAIS === */
+  --primary-color: #0066ff;       /* Azul vibrante principal */
+  --primary-hover: #0052cc;       /* Azul escuro para hover */
+  --secondary-color: #003366;     /* Azul profundo usado nos títulos e textos fortes */
+  --accent-color: #1c2e4a;        /* Azul mais escuro (usado em backgrounds e cabeçalhos) */
+  --background-color: #e9f2ff;    /* Fundo claro geral da página */
+  --card-bg: #ffffff;             /* Fundo dos cards, painéis e tabelas */
+  --border-color: #dee2e6;        /* Bordas sutis */
+  --text-color: #1a1a1a;          /* Texto padrão */
+  --text-muted: #666666;          /* Texto secundário */
+
+  /* === STATUS === */
+  --status-ativo: #28a745;        /* Verde — Ativo */
+  --status-baixo: #ffc107;        /* Amarelo — Estoque baixo */
+  --status-esgotado: #dc3545;     /* Vermelho — Esgotado */
+
+  /* === EFEITOS === */
+  --shadow-default: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --radius-default: 12px;
+
+  /* === GRADIENTES E DETALHES === */
+  --gradient-bg: linear-gradient(180deg, #e9f2ff 0%, #f5f9ff 100%);
+  --table-header-bg: #263b5e;
+  --table-row-alt: #2c4470;
+  --table-row-hover: #34548c;
+}

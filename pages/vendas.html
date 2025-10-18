@@ -1,0 +1,137 @@
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/vendas.css" />
+<script defer src="../js/vendas.js"></script>
+
+<div class="page vendas-page">
+  <div class="pdv-container">
+    <!-- Cabeçalho -->
+    <header class="pdv-header">
+      <h1 id="produto-nome">CAIXA LIVRE - AGUARDANDO PRODUTO</h1>
+    </header>
+
+    <!-- Campo visível de código -->
+    <div class="codigo-box">
+      <label for="inputCodigo">Código do Produto:</label>
+      <input type="text" id="inputCodigo" class="codigo-input" placeholder="Digite o código e pressione Enter" autofocus
+        autocomplete="off" />
+    </div>
+
+    <!-- Corpo principal -->
+    <main class="pdv-main">
+      <!-- Tabela -->
+      <section class="pdv-tabela">
+        <table>
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Item</th>
+              <th>Descrição do Produto</th>
+              <th>Valor Unitário</th>
+              <th>Quantidade</th>
+              <th>Sub-Total</th>
+            </tr>
+          </thead>
+          <tbody id="pdv-body"></tbody>
+        </table>
+      </section>
+
+      <!-- Lateral direita -->
+      <aside class="pdv-lateral">
+        <img id="produto-img" src="../assets/no-image.png" alt="Imagem do Produto" />
+        <div class="pdv-info">
+          <div><span>Preço</span>
+            <p id="preco-produto">R$ 0,00</p>
+          </div>
+          <div><span>Quantidade</span>
+            <p id="quantidade-produto">0</p>
+          </div>
+          <div><span>SubTotal</span>
+            <p id="subtotal-produto">R$ 0,00</p>
+          </div>
+          <div class="total-box">
+            <span>Total da Compra</span>
+            <h2 id="total-compra">R$ 0,00</h2>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="pdv-footer">
+      <button class="pdv-btn" id="btnFecharCaixa">Fechar Caixa<br><small>(F1)</small></button>
+      <button class="pdv-btn" id="btnAbrirCaixa">Abrir Caixa<br><small>(F2)</small></button>
+      <button class="pdv-btn" id="btnCancelarVenda">Cancelar Venda<br><small>(F4)</small></button>
+      <button class="pdv-btn" id="btnCancelarItem">Cancelar Item<br><small>(F5)</small></button>
+      <button class="pdv-btn" id="btnConsultarProdutos">Consultar Produtos<br><small>(F6)</small></button>
+      <button class="pdv-btn" id="btnDevolucao">Devolução<br><small>(F8)</small></button>
+      <button class="pdv-btn destaque" id="btnFinalizarVenda">Finalizar Venda<br><small>(F10)</small></button>
+    </footer>
+  </div>
+
+  <!-- 🔹 Modal de Consulta de Produtos -->
+  <div class="modal-consulta" id="modalConsulta">
+    <div class="modal-consulta-content">
+      <div class="modal-header">
+        <h2>Consultar Produtos</h2>
+        <span class="close-modal" id="closeConsulta">&times;</span>
+      </div>
+
+      <div class="modal-body">
+        <input type="text" id="inputBuscaProduto" placeholder="Digite para filtrar produtos..." />
+        <table class="tabela-consulta">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nome</th>
+              <th>Preço</th>
+            </tr>
+          </thead>
+          <tbody id="listaConsulta"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- 🔹 Modal de Pagamento -->
+  <div class="modal-pagamento" id="modalPagamento">
+    <div class="modal-pagamento-content">
+      <div class="modal-header">
+        <h2>Forma de Pagamento</h2>
+        <span class="close-modal" id="closePagamento">&times;</span>
+      </div>
+
+      <div class="modal-body">
+        <div class="valores-resumo">
+          <p>Total da Venda: <strong id="pagamento-total">R$ 0,00</strong></p>
+
+          <div class="campo">
+            <label for="desconto">Desconto (R$ ou %):</label>
+            <input type="text" id="desconto" placeholder="Ex: 10 ou 10%" />
+          </div>
+
+          <div class="campo">
+            <label for="acrescimo">Acréscimo (R$ ou %):</label>
+            <input type="text" id="acrescimo" placeholder="Ex: 5 ou 5%" />
+          </div>
+
+          <div class="campo">
+            <label for="formaPagamento">Forma de Pagamento:</label>
+            <select id="formaPagamento">
+              <option value="">Selecione...</option>
+              <option value="dinheiro">💵 Dinheiro</option>
+              <option value="pix">⚡ PIX</option>
+              <option value="debito">💳 Cartão Débito</option>
+              <option value="credito">💳 Cartão Crédito</option>
+            </select>
+          </div>
+
+          <p class="valor-final">
+            Valor Final: <strong id="valor-final">R$ 0,00</strong>
+          </p>
+        </div>
+
+        <button id="btnConfirmarPagamento" class="btn-confirmar">Finalizar Venda</button>
+      </div>
+    </div>
+  </div>
+
+</div>

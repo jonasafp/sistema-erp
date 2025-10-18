@@ -1,0 +1,161 @@
+/* ===============================
+   STYLE.CSS — layout principal
+================================= */
+
+@import url('variaveis.css');
+
+/* --- Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* --- Cores principais --- */
+:root {
+  --primary: #007bff;
+  --dark-blue: #0d1b2a;
+  --light-blue: #f3f8ff;
+  --gray: #e5e9f0;
+}
+
+/* --- Body --- */
+body {
+  background: var(--light-blue);
+  color: #333;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* --- Header --- */
+.header {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 35px;
+}
+
+.logo span {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--dark-blue);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: var(--light-blue);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.search-box input {
+  border: none;
+  padding: 8px 10px;
+  outline: none;
+  width: 250px;
+  background: transparent;
+}
+
+.search-box button {
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* --- Botão Menu --- */
+.menu-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  position: fixed;
+  top: 70px;
+  right: -250px; /* <-- sai do lado direito */
+  width: 230px;
+  height: calc(100% - 70px);
+  background: var(--dark-blue);
+  color: #fff;
+  transition: right 0.3s ease; /* alterado para 'right' */
+  padding-top: 20px;
+  z-index: 900;
+  border-left: 2px solid rgba(255,255,255,0.05);
+}
+
+.sidebar.active {
+  right: 0; /* <-- entra pela direita */
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 12px 20px;
+  border-right: 4px solid transparent; /* agora o destaque fica à direita */
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  background: rgba(255,255,255,0.1);
+  border-right-color: var(--primary);
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+/* --- Conteúdo principal --- */
+.main-content {
+  margin-top: 80px;
+  padding: 20px 30px;
+  margin-right: 0;
+  transition: margin-right 0.3s;
+}
+
+/* Ajuste quando o menu está aberto */
+.sidebar.active ~ .main-content {
+  margin-right: 230px; /* empurra conteúdo para a esquerda */
+}
+
+/* --- Responsivo --- */
+@media (max-width: 768px) {
+  .search-box input {
+    width: 150px;
+  }
+  .sidebar {
+    width: 200px;
+  }
+  .sidebar.active ~ .main-content {
+    margin-left: 200px;
+  }
+}

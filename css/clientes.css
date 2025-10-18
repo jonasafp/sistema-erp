@@ -1,0 +1,247 @@
+/* =================================
+   ESTILO GERAL DA PÁGINA DE CLIENTES
+=================================== */
+
+@import url('variaveis.css');
+
+.clientes-page {
+  border-radius: var(--radius-default);
+  padding: 30px;
+  color: var(--text-color);
+  background: var(--background-color);
+  min-height: 100vh;
+}
+
+/* === CABEÇALHO COM PESQUISA E BOTÃO === */
+.clientes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* 🔹 Filtro e busca */
+.filtro-busca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filtro-busca select,
+.filtro-busca input {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: #fff;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  transition: all 0.2s ease;
+}
+
+.filtro-busca select:focus,
+.filtro-busca input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.2);
+}
+
+/* 🔹 Botão de adicionar cliente (ícone +) */
+.btn-add-cliente {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 26px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-add-cliente:hover {
+  color: var(--primary-hover);
+  transform: scale(1.1);
+}
+
+/* =================================
+   TABELA DE CLIENTES
+=================================== */
+.clientes-tabela {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: var(--radius-default);
+  box-shadow: var(--shadow-default);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th {
+  background-color: #f0f4f8;
+  text-align: left;
+  padding: 12px;
+  color: var(--accent-color);
+  font-weight: 600;
+  border-bottom: 2px solid #dee2e6;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+  color: var(--text-color);
+}
+
+tr:hover {
+  background-color: #f7faff;
+}
+
+/* =================================
+   ÍCONES DE AÇÃO (EDITAR / EXCLUIR)
+=================================== */
+.clientes-lista td.acoes {
+  text-align: center;
+  padding: 10px;
+}
+
+.clientes-lista th:last-child {
+  text-align: center;
+}
+
+.acao-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.05rem;
+  color: var(--secondary-color);
+  transition: color 0.2s ease, transform 0.2s ease;
+  margin: 0 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.acao-btn:hover {
+  color: var(--primary-color);
+  transform: scale(1.15);
+}
+
+/* === TOOLTIP (DICA AO PASSAR O MOUSE) === */
+.acao-btn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text-color);
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.acao-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* =================================
+   MODAL DE CADASTRO DE CLIENTE
+=================================== */
+.modal {
+  display: none; /* Oculto por padrão */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--radius-default);
+  width: 420px;
+  box-shadow: var(--shadow-default);
+  position: relative;
+  animation: fadeZoomIn 0.3s ease;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.modal-content label {
+  display: block;
+  font-weight: 600;
+  margin-top: 12px;
+  color: var(--secondary-color);
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: #fff;
+  font-size: 15px;
+}
+
+.btn-salvar {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-salvar:hover {
+  background: var(--primary-hover);
+}
+
+/* 🔹 Botão de fechar modal */
+.close-modal {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--secondary-color);
+  transition: color 0.2s ease;
+}
+
+.close-modal:hover {
+  color: var(--primary-color);
+}
+
+/* === Animação de fade + zoom === */
+@keyframes fadeZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
