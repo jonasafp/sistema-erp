@@ -1,5 +1,5 @@
 // ============================================
-// main.js
+// main.js — Sistema de navegação e carregamento dinâmico
 // ============================================
 
 // Mapeia cada página ao seu respectivo script
@@ -8,6 +8,7 @@ const PAGE_SCRIPTS = {
   "estoque.html": "js/estoque.js",
   "vendas.html": "js/vendas.js",
   "clientes.html": "js/clientes.js",
+  "configuracoes.html": "js/configuracoes.js" // ✅ adicionado
 };
 
 // Remove scripts anteriores (se existirem)
@@ -39,7 +40,6 @@ async function injectPageScript(url) {
     // Executa o conteúdo imediatamente no escopo global
     new Function(code)();
 
-    // Log visual no console
     console.log(`%c✅ ${filename} carregado e executado com sucesso!`, "color:#00c853;font-weight:bold;");
   } catch (err) {
     console.error(`❌ Erro ao carregar o script da página ${filename}:`, err);
@@ -72,7 +72,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.getElementById("sidebar");
   const menuBtn = document.getElementById("menu-btn");
 
-  // Toggle da sidebar
   if (menuBtn && sidebar) {
     menuBtn.addEventListener("click", () => {
       sidebar.classList.toggle("active");
@@ -80,21 +79,17 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Controle dos links do menu
   document.querySelectorAll(".sidebar nav a").forEach(link => {
     link.addEventListener("click", async e => {
       e.preventDefault();
       const url = link.getAttribute("href");
       if (!url) return;
 
-      // Carrega a página
       await carregarPagina(url);
 
-      // Atualiza menu ativo
       document.querySelectorAll(".sidebar li").forEach(li => li.classList.remove("active"));
       link.parentElement.classList.add("active");
 
-      // Fecha sidebar em telas pequenas
       if (window.innerWidth <= 768 && sidebar?.classList.contains("active")) {
         sidebar.classList.remove("active");
       }

@@ -12,25 +12,17 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* --- Cores principais --- */
-:root {
-  --primary: #007bff;
-  --dark-blue: #0d1b2a;
-  --light-blue: #f3f8ff;
-  --gray: #e5e9f0;
-}
-
 /* --- Body --- */
 body {
-  background: var(--light-blue);
-  color: #333;
+  background: var(--background-color);
+  color: var(--text-color);
   min-height: 100vh;
   overflow-x: hidden;
 }
 
 /* --- Header --- */
 .header {
-  background: #fff;
+  background: var(--gradient-bg);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -56,13 +48,13 @@ body {
 .logo span {
   font-size: 1.3rem;
   font-weight: bold;
-  color: var(--dark-blue);
+  color: var(--primary-color);
 }
 
 .search-box {
   display: flex;
   align-items: center;
-  background: var(--light-blue);
+  background: var(--card-bg);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -77,20 +69,28 @@ body {
 
 .search-box button {
   border: none;
-  background: var(--primary);
+  background: var(--primary-color);
   color: #fff;
   padding: 8px 12px;
   cursor: pointer;
 }
 
+.search-box button:hover {
+  background: var(--primary-hover);
+}
+
 /* --- Botão Menu --- */
 .menu-btn {
-  background: var(--primary);
+  background: var(--primary-color);
   color: white;
   border: none;
   padding: 8px 15px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.menu-btn:hover {
+  background: var(--primary-hover);
 }
 
 /* --- Sidebar --- */
@@ -100,7 +100,7 @@ body {
   right: -250px; /* <-- sai do lado direito */
   width: 230px;
   height: calc(100% - 70px);
-  background: var(--dark-blue);
+  background: var(--accent-color);
   color: #fff;
   transition: right 0.3s ease; /* alterado para 'right' */
   padding-top: 20px;
@@ -125,7 +125,7 @@ body {
 .sidebar li.active,
 .sidebar li:hover {
   background: rgba(255,255,255,0.1);
-  border-right-color: var(--primary);
+  border-right-color: var(--primary-color);
 }
 
 .sidebar a {

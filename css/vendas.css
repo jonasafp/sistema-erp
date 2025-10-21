@@ -2,7 +2,7 @@
 
 /* === Estrutura geral === */
 .vendas-page {
-  background: var(--background-color);
+  background: var(--gradient-bg);
   padding: 15px;
   border-radius: var(--radius-default);
   color: var(--text-color);
@@ -10,7 +10,7 @@
 }
 
 .pdv-header {
-  background: var(--primary-color);
+  background: var(--primary-hover);
   color: white;
   text-align: center;
   padding: 12px 0;
@@ -46,21 +46,17 @@
 }
 
 .pdv-tabela th {
-  background: #e9eef3;
+  background: var(--card-bg);
   text-align: left;
   padding: 8px 10px;
   font-weight: 600;
-  color: var(--accent-color);
-  border-bottom: 2px solid #d1d1d1;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--text-muted);
 }
 
 .pdv-tabela td {
   padding: 8px 10px;
   border-bottom: 1px solid #e0e0e0;
-}
-
-.pdv-tabela tr:hover {
-  background: #f4f8fc;
 }
 
 /* === Lateral === */
@@ -88,7 +84,7 @@
   border-radius: var(--radius-default);
   box-shadow: var(--shadow-default);
   margin-bottom: 15px;
-  display: none; /* inicialmente oculto */
+  display: none;
 }
 
 .pdv-info {
@@ -97,7 +93,7 @@
 }
 
 .pdv-info div {
-  background: #f8fafc;
+  background: var(--background-color);
   border-radius: var(--radius-default);
   padding: 10px;
   margin-bottom: 10px;
@@ -106,7 +102,7 @@
 .pdv-info span {
   display: block;
   font-size: 0.85rem;
-  color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 .pdv-info p {
@@ -136,7 +132,7 @@
 
 .pdv-btn {
   flex: 1;
-  background: #e7ebef;
+  background: var(--card-bg);
   color: var(--text-color);
   border: none;
   padding: 10px;
@@ -156,7 +152,7 @@
 }
 
 .pdv-btn:hover {
-  background: #dfe7ee;
+  background: var(--border-color);
 }
 
 .pdv-btn.destaque {
@@ -187,7 +183,7 @@
   padding: 10px 14px;
   border-radius: var(--radius-default);
   border: 1px solid var(--border-color);
-  background: #fff;
+  background: var(--card-bg);
   font-size: 1rem;
   box-shadow: var(--shadow-default);
   transition: all 0.2s ease;
@@ -246,21 +242,22 @@
 }
 
 .modal-header h2 {
-  color: var(--text-color);
+  color: var(--primary-color);
   font-size: 1.4rem;
 }
 
 .close-modal {
   cursor: pointer;
   font-size: 22px;
-  color: var(--secondary-color);
-}
-
-.close-modal:hover {
   color: var(--primary-color);
 }
 
+.close-modal:hover {
+  color: var(--primary-hover);
+}
+
 .modal-body input {
+  background: var(--card-bg);
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -281,7 +278,7 @@
 }
 
 .tabela-consulta tr:hover {
-  background-color: #e3f2fd;
+  background-color: var(--border-color);
   cursor: pointer;
 }
 
@@ -331,17 +328,17 @@
 }
 
 .modal-pagamento .modal-header h2 {
-  color: var(--text-color);
+  color: var(--primary-color);
 }
 
 .modal-pagamento .close-modal {
   font-size: 24px;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   cursor: pointer;
 }
 
 .modal-pagamento .close-modal:hover {
-  color: var(--primary-color);
+  color: var(--primary-hover);
 }
 
 .modal-pagamento .modal-body .campo {
@@ -351,7 +348,7 @@
 .modal-pagamento label {
   display: block;
   font-weight: 600;
-  color: var(--secondary-color);
+  color: var(--text-color);
   margin-bottom: 4px;
 }
 
@@ -361,8 +358,9 @@
   padding: 10px;
   border-radius: 8px;
   border: 1px solid var(--border-color);
-  background: #fff;
+  background: var(--card-bg);
   font-size: 15px;
+  color: var(--text-color);
 }
 
 .modal-pagamento p {

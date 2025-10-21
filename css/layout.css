@@ -67,7 +67,7 @@
 
 /* Header */
 .header {
-    background: var(--light-bg);
+    background: var(--background-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
