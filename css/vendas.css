@@ -164,7 +164,7 @@
   background: var(--primary-hover);
 }
 
-/* Campo de código visível */
+/* Consulta por codigo*/
 .codigo-box {
   display: flex;
   align-items: center;
@@ -191,7 +191,7 @@
 
 .codigo-input:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 6px rgba(0, 174, 255, 0.3);
+  box-shadow: 0 0 3px var(--primary-color);
   outline: none;
 }
 
