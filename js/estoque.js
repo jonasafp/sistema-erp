@@ -22,10 +22,51 @@ function carregarEstoque() {
       <td>${p.categoria}</td>
       <td>${p.quantidade}</td>
       <td><span class="status ${p.status}">${formatarStatus(p.status)}</span></td>
+      <td class="acoes">
+        <button class="acao-btn editar" data-tooltip="Editar" title="Editar">
+        <i class="fas fa-pen"></i>
+        </button>
+        <button class="acao-btn excluir" data-tooltip="Excluir" title="Excluir">
+          <i class="fas fa-trash"></i>
+        </button>
+      </td>
     `;
     tbody.appendChild(tr);
   });
 }
+
+const campoBusca = document.getElementById('campoBusca');
+const filtroTipo = document.getElementById('filtroTipo');
+
+campoBusca.addEventListener('input', () => {
+  const termo = campoBusca.value.toLowerCase();
+  const tipo = filtroTipo.value;
+
+  const tbody = document.getElementById("estoque-body");
+  tbody.innerHTML = "";
+
+  produtos
+    .filter(p => p[tipo].toLowerCase().includes(termo))
+    .forEach(p => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${p.codigo}</td>
+        <td>${p.nome}</td>
+        <td>${p.categoria}</td>
+        <td>${p.quantidade}</td>
+        <td><span class="status ${p.status}">${formatarStatus(p.status)}</span></td>
+        <td class="acoes">
+        <button class="acao-btn editar" data-tooltip="Editar" title="Editar">
+          <i class="fas fa-pen"></i>
+        </button>
+        <button class="acao-btn excluir" data-tooltip="Excluir" title="Excluir">
+          <i class="fas fa-trash"></i>
+        </button>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+});
 
 function formatarStatus(status) {
   switch (status) {
@@ -79,7 +120,7 @@ function formatarStatus(status) {
       quantidade: formProduto.quantidade.value,
       status: formProduto.status.value === "ativo" ? "ok" : (formProduto.status.value === "baixo" ? "low" : "out")
     };
-    produtos.unshift(novo); 
+    produtos.unshift(novo);
     carregarEstoque();
     fecharModal();
     formProduto.reset();

@@ -32,7 +32,7 @@
   padding: 10px 14px;
   border-radius: 8px;
   border: 1px solid var(--border-color);
-  background: var(--background-color);
+  background: var(--card-bg);
   font-size: 0.95rem;
   color: var(--text-color);
   transition: all 0.2s ease;

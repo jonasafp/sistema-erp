@@ -84,6 +84,32 @@
   color: var(--text-muted);
 }
 
+/* === FILTRO E PESQUISA DE PRODUTOS === */
+
+.filtro-busca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.filtro-busca select,
+.filtro-busca input {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  font-size: 0.95rem;
+  color: var(--text-color);
+  transition: all 0.2s ease;
+}
+
+.filtro-busca select:focus,
+.filtro-busca input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 3px var(--primary-color);
+  outline: none;}
+
 /* === TABELA === */
 .estoque-tabela {
   background: var(--card-bg);
@@ -138,6 +164,59 @@ tr:hover {
 .status-esgotado {
   color: var(--status-esgotado);
   font-weight: 600;
+}
+
+/* === AÇÕES (EDITAR / EXCLUIR) === */
+.acao-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.05rem;
+  color: var(--primary-color);
+  transition: color 0.2s ease, transform 0.2s ease;
+  margin: 0 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.acao-btn:hover {
+  color: var(--secondary-color);
+  transform: scale(1.15);
+}
+
+.estoque-tabela td.acoes {
+  text-align: center;
+  padding: 10px;
+}
+
+.estoque-tabela th:last-child {
+  text-align: center;
+}
+
+/* === TOOLTIP (DICA AO PASSAR O MOUSE) === */
+.acao-btn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--background-color);
+  color: var(--text-color);
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.acao-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-4px);
 }
 
 /* === MODAL === */

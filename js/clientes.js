@@ -34,10 +34,10 @@ function renderClientes(lista) {
       <td>${c.email}</td>
       <td>${c.cidade}</td>
       <td class="acoes">
-        <button class="acao-btn editar" data-tooltip="Editar cliente" title="Editar" data-index="${i}">
+        <button class="acao-btn editar" data-tooltip="Editar" title="Editar" data-index="${i}">
           <i class="fas fa-pen"></i>
         </button>
-        <button class="acao-btn excluir" data-tooltip="Excluir cliente" title="Excluir" data-index="${i}">
+        <button class="acao-btn excluir" data-tooltip="Excluir" title="Excluir" data-index="${i}">
           <i class="fas fa-trash"></i>
         </button>
       </td>

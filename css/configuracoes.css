@@ -2,7 +2,7 @@
 
 /* === Estrutura geral === */
 .configuracoes-page {
-  background: var(--background-color);
+  background: var(--gradient-bg);
   color: var(--text-color);
   padding: 30px;
   min-height: 100vh;
@@ -12,7 +12,7 @@
 .page-header h1 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .page-header p {
@@ -27,7 +27,7 @@
 
 .config-section h2 {
   font-size: 1.2rem;
-  color: var(--secondary-color);
+  color: var(--primary-hover);
   margin-bottom: 15px;
   font-weight: 600;
 }
