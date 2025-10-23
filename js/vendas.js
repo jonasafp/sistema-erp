@@ -4,11 +4,10 @@
 
 /* catálogo de exemplo */
 const produtosCatalogo = [
-  { codigo: "0001", nome: "PÃO FRANCÊS", preco: 8.90, img: "../assets/pao.png" },
-  { codigo: "0002", nome: "HOT POCKET SADIA X BURGUER", preco: 5.60, img: "../assets/hotpocket.png" },
-  { codigo: "0003", nome: "STEAK DE FRANGO SADIA 100G", preco: 2.50 },
-  { codigo: "0004", nome: "COXA E SOBRE COXA SADIA 1KG", preco: 16.50 },
-  { codigo: "0005", nome: "REFRIGERANTE LATA 350ML", preco: 4.50, img: "../assets/refrigerante.png" },
+  { codigo: "P001", nome: "Teclado Mecânico", preco: 250, img: "../assets/pao.png" },
+  { codigo: "P002", nome: "Mouse Gamer", preco: 80, img: "../assets/hotpocket.png" },
+  { codigo: "P003", nome: "Monitor 24\"", preco: 736.85 },
+  { codigo: "P004", nome: "Headset USB", preco: 120 },
 ];
 
 let venda = [];
