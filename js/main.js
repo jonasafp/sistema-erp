@@ -1,5 +1,5 @@
 // ============================================
-// main.js — Controle de navegação e configuração global
+// main.js
 // ============================================
 
 // Mapeamento das páginas e seus scripts correspondentes
@@ -93,7 +93,7 @@ function inicializarConfiguracoesAoStart() {
 }
 
 // ============================================
-// 🔹 Controle de scripts e carregamento de páginas
+// Controle de scripts e carregamento de páginas
 // ============================================
 
 function removePageScripts() {
@@ -163,7 +163,7 @@ async function carregarPagina(url) {
 }
 
 // ============================================
-// 🔹 Inicialização principal
+// Inicialização principal
 // ============================================
 
 window.addEventListener("DOMContentLoaded", async () => {

@@ -50,7 +50,7 @@
 
 .grafico-card canvas {
   width: 100% !important;
-  height: 240px !important; /* 🔹 tamanho reduzido do gráfico */
+  height: 240px !important; 
 }
 
 .grafico-card:hover {
