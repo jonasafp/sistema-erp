@@ -72,18 +72,21 @@ function aplicarCores(cor) {
 
   const esquemas = {
     azul: {
+      "--grafic-color": "#0066ff46",
       "--primary-color": "#0066ff",
       "--primary-hover": "#0052cc",
       "--secondary-color": "#003366",
       "--accent-color": "#1c2e4a",
     },
     vermelho: {
+      "--grafic-color": "#e5393546",
       "--primary-color": "#e53935",
       "--primary-hover": "#c62828",
       "--secondary-color": "#8b0000",
       "--accent-color": "#4a1c1c",
     },
     amarelo: {
+      "--grafic-color": "#f9a82546",
       "--primary-color": "#f9a825",
       "--primary-hover": "#f57f17",
       "--secondary-color": "#5f370e",

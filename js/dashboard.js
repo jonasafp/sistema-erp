@@ -6,8 +6,8 @@ console.log("📊 Executando dashboard.js...");
 
 // Função principal para criar os gráficos
 function inicializarGraficos() {
-  const ctxVendas = document.getElementById("graficoVendas");
-  const ctxEstoque = document.getElementById("graficoEstoque");
+  const ctxVendas = document.getElementById("salesChart");
+  const ctxEstoque = document.getElementById("stockChart");
 
   if (!ctxVendas || !ctxEstoque) {
     console.warn("⏳ Aguardando carregamento dos elementos do gráfico...");
@@ -23,7 +23,7 @@ function inicializarGraficos() {
         label: "Vendas (R$)",
         data: [1200, 950, 1500, 1800, 1300, 2100, 1900],
         borderColor: getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim(),
-        backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--primary-hover').trim(),
+        backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--grafic-color').trim(),
         tension: 0.3,
         fill: true
       }]

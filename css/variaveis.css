@@ -1,5 +1,6 @@
 :root {
   /* === CORES PRINCIPAIS === */
+  --grafic-color: #0066ff46;
   --primary-color: #0066ff;       /* Azul vibrante principal */
   --primary-hover: #0052cc;       /* Azul escuro para hover */
   --secondary-color: #003366;     /* Azul profundo usado nos títulos e textos fortes */
@@ -11,9 +12,9 @@
   --text-muted: #666666;          /* Texto secundário */
 
   /* === STATUS === */
-  --status-ativo: #28a745;        /* Verde — Ativo */
-  --status-baixo: #ffc107;        /* Amarelo — Estoque baixo */
-  --status-esgotado: #dc3545;     /* Vermelho — Esgotado */
+  --status-ativo: #3bbe59d0;        /* Verde — Ativo */
+  --status-baixo: #f0c032d0;        /* Amarelo — Estoque baixo */
+  --status-esgotado: #c40e20d0;     /* Vermelho — Esgotado */
 
   /* === EFEITOS === */
   --shadow-default: 0 4px 10px rgba(0, 0, 0, 0.08);
