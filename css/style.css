@@ -51,34 +51,6 @@ body {
   color: var(--primary-color);
 }
 
-.search-box {
-  display: flex;
-  align-items: center;
-  background: var(--card-bg);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.search-box input {
-  border: none;
-  padding: 8px 10px;
-  outline: none;
-  width: 250px;
-  background: transparent;
-}
-
-.search-box button {
-  border: none;
-  background: var(--primary-color);
-  color: #fff;
-  padding: 8px 12px;
-  cursor: pointer;
-}
-
-.search-box button:hover {
-  background: var(--primary-hover);
-}
-
 /* --- Botão Menu --- */
 .menu-btn {
   background: var(--primary-color);
@@ -151,8 +123,8 @@ body {
             RESPONSIVIDADE 
    ================================ */
 
-/* --- Tablets (até 1024px) --- */
-@media (max-width: 1024px) {
+/* --- Tablets (até 853px) --- */
+@media (max-width: 856px) {
   body {
     font-size: 0.95rem;
   }
@@ -184,7 +156,7 @@ body {
   }
 }
 
-/* --- Celulares grandes (até 768px) --- */
+/* --- Celulares  (até 768px) --- */
 @media (max-width: 768px) {
   main {
     padding: 15px;
@@ -233,8 +205,8 @@ body {
   }
 }
 
-/* --- Celulares pequenos (até 480px) --- */
-@media (max-width: 480px) {
+/* --- Celulares (até 430px) --- */
+@media (max-width: 430px) {
   body {
     font-size: 0.9rem;
   }
@@ -251,17 +223,14 @@ body {
     padding: 12px;
   }
 
+  .menu-btn {
+    width: 70px;
+  }
+
   .btn,
   button {
     font-size: 0.85rem;
     padding: 8px 14px;
-  }
-
-  input,
-  select,
-  textarea {
-    font-size: 0.85rem;
-    padding: 8px;
   }
 
   .modal-content {

@@ -82,14 +82,14 @@ function inicializarGraficos() {
   return true;
 }
 
-// 🔹 Observa o container principal para saber quando o dashboard foi carregado
+//  Observa o container principal para saber quando o dashboard foi carregado
 const observer = new MutationObserver(() => {
   const sucesso = inicializarGraficos();
   if (sucesso) observer.disconnect(); // para de observar quando os gráficos forem criados
 });
 
-// 🔹 Inicia o observador assim que o script rodar
+//  Inicia o observador assim que o script rodar
 observer.observe(document.getElementById("page-content"), { childList: true, subtree: true });
 
-// 🔹 E também tenta iniciar os gráficos diretamente caso o HTML já esteja lá
+//  E também tenta iniciar os gráficos diretamente caso o HTML já esteja lá
 setTimeout(inicializarGraficos, 500);

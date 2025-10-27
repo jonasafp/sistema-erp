@@ -42,7 +42,8 @@
 .filtro-busca input:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 3px var(--primary-color);
-  outline: none;}
+  outline: none;
+}
 
 /* Botão de adicionar cliente (ícone +) */
 .btn-add-cliente {
@@ -163,7 +164,7 @@ tr:hover {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
   justify-content: center;
   align-items: center;
@@ -240,6 +241,7 @@ tr:hover {
     opacity: 0;
     transform: scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -250,14 +252,18 @@ tr:hover {
            RESPONSIVIDADE
    =============================== */
 
-/* --- Tablets (até 1024px) --- */
-@media (max-width: 1024px) {
-  .clientes-page {
-    padding: 15px;
+/* --- Tablets (até 853px) --- */
+@media (max-width: 853px) {
+  .clientes-tabela {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+    background-color: var(--cor-fundo-card);
+    padding: 10px;
   }
 
   .clientes-header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 10px;
   }
@@ -266,60 +272,63 @@ tr:hover {
     width: 100%;
   }
 
-  table {
-    font-size: 0.9rem;
+  .btn-add-cliente {
+    margin-left: auto;
+    margin-top: auto;
   }
 
-  th, td {
-    padding: 10px;
-  }
-}
-
-/* --- Celulares (até 768px) --- */
-@media (max-width: 768px) {
-  .clientes-header {
-    flex-direction: column;
-    gap: 12px;
+  .clientes-tabela table {
+    min-width: 750px;
+    border-collapse: collapse;
   }
 
-  .search-box {
-    width: 100%;
-    flex-direction: column;
-    gap: 6px;
+  .clientes-tabela th,
+  .clientes-tabela td {
+    white-space: nowrap;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    text-align: left;
   }
 
-  .search-box input,
-  .search-box select {
-    width: 100%;
+  .clientes-tabela th {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
   }
 
-  .btn-add {
-    position: static;
-    align-self: flex-end;
+  .clientes-tabela tbody tr:nth-child(even) {
+    background-color: var(--cor-fundo-claro);
   }
 
-  table {
+  .clientes-tabela .btn-editar,
+  .clientes-tabela .btn-excluir {
+    padding: 6px 8px;
     font-size: 0.85rem;
   }
 
-  th, td {
-    padding: 8px;
-  }
-
-  .acoes i {
-    font-size: 1.2rem;
-    margin-right: 10px;
-  }
-
-  .modal-content {
-    width: 90%;
-    padding: 20px;
+  .acao-btn {
+    margin-left: -10px;
+    margin-right: -20px;
   }
 }
 
-/* --- Pequenos celulares (até 480px) --- */
-@media (max-width: 480px) {
-  th, td {
+/* --- celulares (até 430px) --- */
+@media (max-width: 430px) {
+
+  .btn-add-cliente {
+    margin-left: -15px; 
+    margin-top: auto;
+  }
+
+  .filtro-busca select {
+    width: 90px;
+  }
+
+  .filtro-busca input {
+    width: 140px;
+  }
+
+  th,
+  td {
     font-size: 0.8rem;
     padding: 6px;
   }

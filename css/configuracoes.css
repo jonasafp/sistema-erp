@@ -136,8 +136,8 @@
           RESPONSIVIDADE
    =============================== */
 
-/* --- Tablets (até 1024px) --- */   
-@media (max-width: 1024px) {
+/* --- Tablets (até 853px) --- */   
+@media (max-width: 853px) {
   .config-page {
     padding: 15px;
   }
@@ -167,8 +167,8 @@
   }
 }
 
-/* --- Pequenos celulares (até 480px) --- */
-@media (max-width: 480px) {
+/* --- celulares (até 430px) --- */
+@media (max-width: 430px) {
   .config-card {
     padding: 15px;
   }

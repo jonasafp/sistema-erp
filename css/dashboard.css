@@ -50,7 +50,7 @@
 
 .grafico-card canvas {
   width: 100% !important;
-  height: 240px !important; 
+  height: 240px !important;
 }
 
 .grafico-card:hover {
@@ -73,7 +73,7 @@
   transition: all 0.3s ease;
 }
 
-.summary-card:hover{
+.summary-card:hover {
   transform: translateY(-4px);
 }
 
@@ -127,13 +127,13 @@
          RESPONSIVIDADE 
    =============================== */
 
-/* --- Tablets (até 1024px) --- */   
-@media (max-width: 1024px) {
-  .dashboard-cards {
+/* --- Tablets (até 853px) --- */
+@media (max-width: 853px) {
+  .grafico-card {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .dashboard-graphs {
+  .grafico-card {
     grid-template-columns: 1fr;
     gap: 20px;
   }
@@ -144,17 +144,11 @@
   }
 }
 
-/* --- Celulares (até 768px) --- */
-@media (max-width: 768px) {
-  .dashboard-cards {
+/* --- celulares (até 430px) --- */
+@media (max-width: 430px) {
+  .grafico-card {
     grid-template-columns: 1fr;
-  }
-
-  .dashboard-card {
-    width: 100%;
-  }
-
-  .dashboard-graphs {
+    width: 92%;
     display: flex;
     flex-direction: column;
   }
@@ -163,15 +157,12 @@
     width: 100% !important;
     height: auto !important;
   }
-}
 
-/* --- Pequenos celulares (até 480px) --- */
-@media (max-width: 480px) {
-  .dashboard-card h3 {
+  .grafico-card h3 {
     font-size: 1rem;
   }
 
-  .dashboard-card p {
+  .grafico-card p {
     font-size: 0.9rem;
   }
 }

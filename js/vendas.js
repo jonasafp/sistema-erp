@@ -2,22 +2,22 @@
 // vendas.js — PDV 
 // ===========================
 
-/* catálogo de exemplo */
+// catálogo de exemplo 
 const produtosCatalogo = [
-  { codigo: "P001", nome: "Teclado Mecânico", preco: 250, img: "../assets/pao.png" },
-  { codigo: "P002", nome: "Mouse Gamer", preco: 80, img: "../assets/hotpocket.png" },
+  { codigo: "P001", nome: "Teclado Mecânico", preco: 250 },
+  { codigo: "P002", nome: "Mouse Gamer", preco: 80 },
   { codigo: "P003", nome: "Monitor 24\"", preco: 736.85 },
   { codigo: "P004", nome: "Headset USB", preco: 120 },
 ];
 
 let venda = [];
 
-/* ---------- helpers ---------- */
+// helpers 
 function fmt(valor) {
   return `R$ ${Number(valor || 0).toFixed(2)}`;
 }
 
-/* ---------- renderização ---------- */
+// renderização
 function renderTabela() {
   const tbody = document.getElementById("pdv-body");
   if (!tbody) {
@@ -46,7 +46,7 @@ function renderTabela() {
   if (totalEl) totalEl.textContent = fmt(total);
 }
 
-/* atualiza painel lateral (mostra imagem apenas se produto.img existir) */
+// atualiza painel lateral (mostra imagem apenas se produto.img existir)
 function atualizarResumo(produto) {
   const nomeEl = document.getElementById("produto-nome");
   const precoEl = document.getElementById("preco-produto");
@@ -83,7 +83,7 @@ function atualizarResumo(produto) {
   }
 }
 
-/* ---------- consulta por código ---------- */
+// consulta por código
 function handleInputCodigo(inputCodigo) {
   if (!inputCodigo) return;
 
@@ -117,7 +117,7 @@ function handleInputCodigo(inputCodigo) {
   });
 }
 
-/* ---------- Modal de consulta ---------- */
+// Modal de consulta
 function setupModalConsulta() {
   const btnConsultarProdutos = document.getElementById("btnConsultarProdutos");
   const modalConsulta = document.getElementById("modalConsulta");
@@ -173,7 +173,7 @@ function setupModalConsulta() {
   });
 }
 
-/* ---------- Modal de pagamento / finalizar venda ---------- */
+// Modal de pagamento / finalizar venda
 function setupModalPagamento() {
   const btnFinalizarVenda = document.getElementById("btnFinalizarVenda");
   const modalPagamento = document.getElementById("modalPagamento");
@@ -268,7 +268,7 @@ function setupModalPagamento() {
   });
 }
 
-/* ---------- popup feedback ---------- */
+// popup feedback
 function ensurePopupStyle() {
   if (document.getElementById("venda-popup-style")) return;
   const style = document.createElement("style");
@@ -309,7 +309,7 @@ function showPopup(text) {
   }, 1800);
 }
 
-/* ---------- outros botões ---------- */
+// outros botões 
 function setupOtherButtons() {
   document.getElementById("btnFecharCaixa")?.addEventListener("click", () => alert("Fechando caixa..."));
   document.getElementById("btnAbrirCaixa")?.addEventListener("click", () => alert("Abrindo caixa..."));
@@ -328,7 +328,7 @@ function setupOtherButtons() {
   document.getElementById("btnDevolucao")?.addEventListener("click", () => alert("Devolução em desenvolvimento."));
 }
 
-/* ---------- inicialização imediata ---------- */
+// inicialização imediata
 (function initPDVPage() {
   // valida elementos mínimos
   const required = [

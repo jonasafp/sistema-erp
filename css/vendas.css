@@ -201,8 +201,13 @@
 }
 
 @keyframes destaqueItem {
-  0% { background: #b3e5fc; }
-  100% { background: transparent; }
+  0% {
+    background: #b3e5fc;
+  }
+
+  100% {
+    background: transparent;
+  }
 }
 
 /* ========================
@@ -272,7 +277,8 @@
   border-collapse: collapse;
 }
 
-.tabela-consulta th, .tabela-consulta td {
+.tabela-consulta th,
+.tabela-consulta td {
   padding: 10px 12px;
   text-align: left;
   border-bottom: 1px solid #e0e0e0;
@@ -285,13 +291,25 @@
 
 /* Animações */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes zoomIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* ========================
@@ -305,7 +323,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.45);
+  background-color: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(4px);
   justify-content: center;
   align-items: center;
@@ -398,8 +416,8 @@
           RESPONSIVIDADE
    =============================== */
 
-/* --- Tablets (até 1024px) --- */   
-@media (max-width: 1024px) {
+/* --- Tablets (até 853px) --- */
+@media (max-width: 853px) {
   .pdv-main {
     grid-template-columns: 2fr 1fr;
   }
@@ -415,54 +433,88 @@
   }
 }
 
-/* --- Celulares (até 768px) --- */
-@media (max-width: 768px) {
-  .pdv-main {
-    grid-template-columns: 1fr;
-  }
-
-  .pdv-lateral {
-    order: -1;
-    margin-bottom: 15px;
-  }
-
-  .pdv-tabela {
-    overflow-x: auto;
-  }
-
-  .pdv-footer {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .pdv-btn {
-    width: 100%;
-    margin-bottom: 8px;
-  }
-
-  .modal-content {
-    width: 90%;
-    padding: 20px;
-  }
-
-  canvas {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-/* --- Pequenos celulares (até 480px) --- */
-@media (max-width: 480px) {
+/* --- celulares (até 430px) --- */
+@media (max-width: 430px) {
   .pdv-header h1 {
     font-size: 1.1rem;
   }
 
+  .pdv-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pdv-tabela {
+    order: 1;
+    overflow-x: auto;
+    border-radius: 8px;
+    padding: 5px;
+  }
+
+  .pdv-tabela table {
+    width: 700px;
+    font-size: 0.85rem;
+  }
+
+  .pdv-lateral {
+    order: 2;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .pdv-lateral img {
+    display: none;
+    /* Oculta imagem para melhor proporção */
+  }
+
+  .pdv-info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .pdv-info div {
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  .pdv-info span {
+    font-size: 0.8rem;
+  }
+
+  .pdv-info p {
+    font-size: 1.1rem;
+  }
+
+  .pdv-footer {
+    flex-direction: grid;
+    gap: 8px;
+  }
+
   .pdv-btn {
+    width: 100%;
     font-size: 0.85rem;
     padding: 10px;
   }
 
-  th, td {
-    font-size: 0.8rem;
+  .modal-consulta-content,
+  .modal-pagamento-content {
+    width: 90%;
+    max-height: 85vh;
+    padding: 15px;
+  }
+
+  .codigo-box {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .codigo-input {
+    width: 100%;
   }
 }
