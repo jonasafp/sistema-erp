@@ -245,3 +245,91 @@ tr:hover {
     transform: scale(1);
   }
 }
+
+/* ===============================
+           RESPONSIVIDADE
+   =============================== */
+
+/* --- Tablets (até 1024px) --- */
+@media (max-width: 1024px) {
+  .clientes-page {
+    padding: 15px;
+  }
+
+  .clientes-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .clientes-header .search-box {
+    width: 100%;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+}
+
+/* --- Celulares (até 768px) --- */
+@media (max-width: 768px) {
+  .clientes-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-box {
+    width: 100%;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .search-box input,
+  .search-box select {
+    width: 100%;
+  }
+
+  .btn-add {
+    position: static;
+    align-self: flex-end;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  .acoes i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+/* --- Pequenos celulares (até 480px) --- */
+@media (max-width: 480px) {
+  th, td {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .modal-content h2 {
+    font-size: 1rem;
+  }
+
+  .btn-salvar {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}

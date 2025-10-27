@@ -99,12 +99,59 @@
     overflow-y: auto;
 }
 
-/* Responsividade */
+/* ===============================
+           RESPONSIVIDADE
+   =============================== */
+
+/* --- Tablets (até 1024px) --- */   
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  #page-content {
+    margin-left: 220px;
+  }
+}
+
+/* --- Celulares (até 768px) --- */
 @media (max-width: 768px) {
-    .sidebar {
-        display: none;
-    }
-    .menu-btn {
-        display: inline-block;
-    }
+  .sidebar {
+    position: fixed;
+    left: -100%;
+    width: 240px;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  #menu-btn {
+    display: block;
+  }
+
+  #page-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+}
+
+/* --- Pequenos celulares (até 480px) --- */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1rem;
+  }
+
+  .sidebar nav a {
+    font-size: 0.9rem;
+  }
 }

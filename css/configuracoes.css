@@ -131,3 +131,53 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===============================
+          RESPONSIVIDADE
+   =============================== */
+
+/* --- Tablets (até 1024px) --- */   
+@media (max-width: 1024px) {
+  .config-page {
+    padding: 15px;
+  }
+
+  .config-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Celulares (até 768px) --- */
+@media (max-width: 768px) {
+  .config-options {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .config-card {
+    padding: 20px;
+  }
+
+  .config-card h3 {
+    font-size: 1rem;
+  }
+
+  .config-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* --- Pequenos celulares (até 480px) --- */
+@media (max-width: 480px) {
+  .config-card {
+    padding: 15px;
+  }
+
+  .config-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .config-card p {
+    font-size: 0.85rem;
+  }
+}

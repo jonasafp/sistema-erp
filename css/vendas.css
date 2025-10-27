@@ -393,3 +393,76 @@
 .btn-confirmar:hover {
   background: var(--primary-hover);
 }
+
+/* ===============================
+          RESPONSIVIDADE
+   =============================== */
+
+/* --- Tablets (até 1024px) --- */   
+@media (max-width: 1024px) {
+  .pdv-main {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .pdv-footer {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .pdv-btn {
+    font-size: 0.9rem;
+    min-width: 120px;
+  }
+}
+
+/* --- Celulares (até 768px) --- */
+@media (max-width: 768px) {
+  .pdv-main {
+    grid-template-columns: 1fr;
+  }
+
+  .pdv-lateral {
+    order: -1;
+    margin-bottom: 15px;
+  }
+
+  .pdv-tabela {
+    overflow-x: auto;
+  }
+
+  .pdv-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pdv-btn {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* --- Pequenos celulares (até 480px) --- */
+@media (max-width: 480px) {
+  .pdv-header h1 {
+    font-size: 1.1rem;
+  }
+
+  .pdv-btn {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  th, td {
+    font-size: 0.8rem;
+  }
+}

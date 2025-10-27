@@ -343,3 +343,82 @@ tr:hover {
 .modal.show .modal-content {
   transform: scale(1);
 }
+
+/* ===============================
+          RESPONSIVIDADE
+   =============================== */
+
+/* --- Tablets (até 1024px) --- */
+@media (max-width: 1024px) {
+  .estoque-page {
+    padding: 15px;
+  }
+
+  .cards-resumo {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+}
+
+/* --- Celulares (até 768px) --- */
+@media (max-width: 768px) {
+  .estoque-page {
+    padding: 10px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .btn-add {
+    position: static;
+    align-self: flex-end;
+    margin-bottom: 10px;
+  }
+
+  .cards-resumo {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .estoque-tabela {
+    padding: 15px;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  .acoes i {
+    font-size: 1.1rem;
+    margin-right: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+/* --- Pequenos celulares (até 480px) --- */
+@media (max-width: 480px) {
+  th, td {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .btn-salvar {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}
